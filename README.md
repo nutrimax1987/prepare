@@ -1,42 +1,42 @@
-console.log('by reference example 1');
-let a = {num:22};
-let c = b = a;
-b = {};
-console.log(a); // {num:22}
-console.log(b); // {}
-console.log(c); // {num:22}
+ console.log('by reference example 1');
+ let a = {num:22};
+ let c = b = a;
+ b = {};
+ console.log(a); // {num:22}
+ console.log(b); // {}
+ console.log(c); // {num:22}
 
-console.log('by reference example 2');
+ console.log('by reference example 2');
 
-a = {num:55};
-c = b = a;
-b.num = 10;
-console.log(a);  // {num:10}
-console.log(b);  // {num:10}
-console.log(c);  // {num:10}
+ a = {num:55};
+ c = b = a;
+ b.num = 10;
+ console.log(a);  // {num:10}
+ console.log(b);  // {num:10}
+ console.log(c);  // {num:10}
 
 
-console.log('closures example');
-var addTo = function (passed){
+ console.log('closures example');
+ var addTo = function (passed){
   var add = function(inner){
     return passed + inner;
   }
   return add;
 }
 
-var addNothing = new addTo();
-var addThree = new addTo(3);
-var addFour = new addTo(4);
+ var addNothing = new addTo();
+ var addThree = new addTo(3);
+ var addFour = new addTo(4);
 
-console.log(addNothing(1)); // NaN - because passed id 'undefined'
-console.log(addThree(1)); // 4 - because passed = 3
-console.log(addFour(1)); // 5 - because passed = 4
+ console.log(addNothing(1)); // NaN - because passed id 'undefined'
+ console.log(addThree(1)); // 4 - because passed = 3
+ console.log(addFour(1)); // 5 - because passed = 4
 
-console.log('indexes example');
-const x = [1,2,3];
-x[-1] = -45;
-console.log(x.indexOf(10000)); // -1
-console.log(x[x.indexOf(10000)]); // - 45
+ console.log('indexes example');
+ const x = [1,2,3];
+ x[-1] = -45;
+ console.log(x.indexOf(10000)); // -1
+ console.log(x[x.indexOf(10000)]); // - 45
 
 console.log('sorting numbers');
 let arr = [1,21,5,10,31,15];
